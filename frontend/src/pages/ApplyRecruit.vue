@@ -83,7 +83,7 @@
                 axios.defaults.headers.post['Content-Type'] = 'multipart/form-data';
                 let formData = new FormData();
                 formData.append('file',this.selectedFile);
-                axios.post('http://localhost:8000/recruit/apply',formData, {
+                axios.post('http://13.125.164.72:8000/recruit/apply',formData, {
                 params: {
                     target : this.recruit.target,
                     id : this.recruit.id,

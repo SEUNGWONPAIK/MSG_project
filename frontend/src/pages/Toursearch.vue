@@ -56,7 +56,7 @@
 
     <v-ons-list v-else>
         <v-ons-card v-for="todo in filtered" @click="push(page2.component, page2.label, todo)"  >
-            <img v-bind:src="'http://localhost:8000/'+todo.TourImageURL" alt="MSG" width="275" height="230">
+            <img v-bind:src="'http://13.125.164.72:8000/'+todo.TourImageURL" alt="MSG" width="275" height="230">
             <div>&nbsp;</div>
             <div class="title2">
                 <strong>  {{todo.TourTitle}} </strong>
@@ -222,7 +222,7 @@
             data() {
                 return {
                     nowDate: Date.now(),
-                    viewimg:"http://localhost:8000/uploads/",
+                    viewimg:"http://13.125.164.72:8000/uploads/",
                     fakeimg: "file-1544454352258.png",
                     page: {
                         component: MakeTourItem,
@@ -237,7 +237,7 @@
                         {
                             TourContent: "",
                             TourDayandTime: "",
-                            TourImageURL: "http://localhost:8000/",
+                            TourImageURL: "http://13.125.164.72:8000/",
                             TourLocation: "",
                             TourThema: '',
                             TourMaxNum: 10,
@@ -311,7 +311,7 @@
                 };
             },
             beforeCreate() {
-                this.$http.get('http://localhost:8000/getTourList/custom').then(res => {
+                this.$http.get('http://13.125.164.72:8000/getTourList/custom').then(res => {
                     console.log("보냇다 보냇다~ ")
                     this.categories = res.data.tourdata;
 

@@ -3,7 +3,7 @@
     <custom-toolbar v-bind="toolbarInfo">{{tour.TourTitle}}</custom-toolbar>
 
     <div class="ddd" style="text-align: center;">
-        <img v-bind:src="'http://localhost:8000/'+tour.TourImageURL" alt="MSG" width="275" height="230">
+        <img v-bind:src="'http://13.125.164.72:8000/'+tour.TourImageURL" alt="MSG" width="275" height="230">
         <v-ons-card>
             지역: {{tour.TourLocation}}<br>
         </v-ons-card>
@@ -44,7 +44,7 @@
         </v-ons-card>
         <div class="guide_info" v-show="show_info === true">
             <v-ons-card v-for="item in guide_info">
-                <img v-bind:src="'http://localhost:8000/'+item.User_ImageURL" alt="MSG" width="275" height="230">
+                <img v-bind:src="'http://13.125.164.72:8000/'+item.User_ImageURL" alt="MSG" width="275" height="230">
                 <v-ons-card>이메일 : {{item.Email}}</v-ons-card>
                 <v-ons-card>이름 : {{item.Name}}</v-ons-card>
                 <v-ons-card>핸드폰 번호 : {{item.PhoneNum}}</v-ons-card>
@@ -88,7 +88,7 @@
             show_guide_info(key1){
                 if(this.show_info === false){
                     this.show_info=true;
-                    this.$http.post('http://localhost:8000/checkInfo/guide', {
+                    this.$http.post('http://13.125.164.72:8000/checkInfo/guide', {
                         params: {user: key1}
                     })
                         .then((response) => {  //로그인 성공;
@@ -149,7 +149,7 @@
                     buyer_postcode: '123-456',
                 }, (result_success) => {
                     //성공할 때 실행 될 콜백 함수
-                    this.$http.post('http://localhost:8000/applyTour',{	
+                    this.$http.post('http://13.125.164.72:8000/applyTour',{
                         params: {	
                             Number: num,	
                             userInfo: this.tour,	

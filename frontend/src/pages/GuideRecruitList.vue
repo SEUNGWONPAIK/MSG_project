@@ -83,7 +83,7 @@
   export default {
 
     beforeCreate(){
-      this.$http.get('http://localhost:8000/recruit/custom').then(data => {
+      this.$http.get('http://13.125.164.72:8000/recruit/custom').then(data => {
         this.total_data=data.data.recruitdata;
         this.filtered_data.pop();
         for (var i = 0; i < this.total_data.length; i++) {

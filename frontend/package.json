@@ -5,7 +5,7 @@
   "author": "Fran Dios <me@frandiox.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --host localhost --port 7000",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --host ec2-13-125-164-72.ap-northeast-2.compute.amazonaws.com --port 8080",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "build:watch": "cross-env NODE_ENV=production WEBPACK_WATCH=true webpack --progress --hide-modules",
     "demo:index": "mv www/index.html www/main.html && sed -i -e 's/index\\.html/main\\.html/' www/demo.html && mv www/demo.html www/index.html",
@@ -15,8 +15,10 @@
     "axios": "^0.18.0",
     "firebase": "^5.11.1",
     "gh-pages": "^1.2.0",
+    "jquery": "^3.4.1",
     "onsenui": "^2.10.2",
     "vue": "^2.5.3",
+    "vue-iamport": "^0.1.2",
     "vue-onsenui": "^2.6.1",
     "vuex": "^3.0.1",
     "yarn": "^1.15.2"
@@ -29,6 +31,7 @@
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^3.0.0",
     "css-loader": "^0.28.7",
+    "expose-loader": "^0.7.5",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.28.0",
